@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 20%, #29151d 0%, #120b0f 35%, #070607 75%);
+    color: #f5eeee;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   ACCESS SCREEN
+========================= */
+
+.screen {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(circle at center, #241218 0%, #090608 65%);
+    
+    z-index: 9999;
+}
+
+.lock-card {
+    width: min(420px, 100%);
+
+    padding: 42px 28px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.65),
+        inset 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.lock-icon {
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.lock-card h1 {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    margin-top: 10px;
+    margin-bottom: 28px;
+
+    color: #aaa0a4;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.input-box input {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+
+    outline: none;
+
+    background: rgba(0, 0, 0, 0.3);
+
+    color: white;
+
+    font-size: 16px;
+    text-align: center;
+
+    letter-spacing: 4px;
+
+    transition: 0.25s;
+}
+
+.input-box input:focus {
+    border-color: rgba(255, 150, 170, 0.55);
+    box-shadow: 0 0 20px rgba(255, 100, 130, 0.08);
+}
+
+#unlockBtn {
+    width: 100%;
+
+    margin-top: 14px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: #f2e7e9;
+    color: #171013;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+#unlockBtn:hover {
+    transform: translateY(-2px);
+}
+
+#unlockBtn:active {
+    transform: scale(0.98);
+}
+
+.error {
+    min-height: 20px;
+
+    margin-top: 14px;
+
+    color: #e88d9d;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+#mainContent {
+    width: 100%;
+    min-height: 100vh;
+
+    animation: pageAppear 1.2s ease;
+}
+
+@keyframes pageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-container {
+    position: fixed;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 100;
+}
+
+.music-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 15px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    background: rgba(20, 14, 17, 0.72);
+
+    color: #f4e9eb;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.music-button:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.music-button.playing {
+    box-shadow:
+        0 0 25px rgba(255, 120, 150, 0.18);
+}
+
+#musicIcon {
+    font-size: 15px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 25px 50px;
+}
+
+.heart {
+    font-size: 90px;
+
+    line-height: 1;
+
+    color: #d98a99;
+
+    text-shadow:
+        0 0 35px rgba(220, 100, 125, 0.3);
+
+    animation: heartbeat 3s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.small-title {
+    margin-top: 30px;
+
+    color: #9f9297;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    margin-top: 12px;
+
+    font-size: clamp(52px, 15vw, 100px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+.date {
+    margin-top: 20px;
+
+    color: #95898d;
+
+    font-size: 15px;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-card {
+    width: min(720px, calc(100% - 36px));
+
+    margin: 0 auto 120px;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.065),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.45);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.letter-top,
+.letter-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #a99da1;
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+.letter-content {
+
+    min-height: 500px;
+
+    margin: 40px 0;
+
+    outline: none;
+
+    color: #eee5e7;
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    white-space: pre-wrap;
+}
+
+.letter-content:empty::before {
+
+    content: "Write your message here...";
+
+    color: #665d61;
+
+    font-style: italic;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 0 20px 50px;
+
+    text-align: center;
+
+    color: #665e62;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .lock-card {
+        padding: 35px 22px;
+    }
+
+    .hero {
+        min-height: 70vh;
+    }
+
+    .heart {
+        font-size: 72px;
+    }
+
+    .small-title {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .letter-card {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .letter-content {
+        min-height: 450px;
+
+        margin: 30px 0;
+
+        font-size: 17px;
+
+        line-height: 1.9;
+    }
+
+    .music-container {
+        top: 12px;
+        right: 12px;
+    }
+
+    .music-button {
+        padding: 9px 12px;
+    }
+}
