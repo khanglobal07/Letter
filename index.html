@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A letter For You </title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ACCESS SCREEN -->
+    <div id="accessScreen" class="screen">
+
+        <div class="lock-card">
+
+            <div class="lock-icon">🔐</div>
+
+            <h1>Private Letter</h1>
+
+            <p class="subtitle">
+                This page is not meant for everyone.
+            </p>
+
+            <div class="input-box">
+                <input
+                    type="password"
+                    id="tokenInput"
+                    placeholder="Enter access token"
+                    autocomplete="off"
+                >
+            </div>
+
+            <button id="unlockBtn">
+                Unlock
+            </button>
+
+            <p id="errorMessage" class="error"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+    <main id="mainContent" class="hidden">
+
+        <!-- MUSIC -->
+        <div class="music-container">
+
+            <button id="musicBtn" class="music-button">
+                <span id="musicIcon">🎵</span>
+                <span id="musicText">Play Music</span>
+            </button>
+
+            <audio id="backgroundMusic" preload="metadata">
+                <source src="music.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+
+        </div>
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="celebration">🎊</div>
+
+            <p class="small-title">
+                Letter
+            </p>
+
+            <h1>
+                For You
+            </h1>
+
+            <p class="date">
+                A letter from someone who still cares.
+            </p>
+
+        </section>
+
+
+        <!-- LETTER -->
+        <section class="letter-card">
+
+            <div class="letter-top">
+                <span>Dear You,</span>
+                <span>♡</span>
+            </div>
+
+            <!--
+                WRITE YOUR MESSAGE BELOW
+                DO NOT DELETE THE letter-content DIV
+            -->
+
+            <div class="letter-content" contenteditable="true">
+
+                Hey, kya hua hau tumhe kuch toh batao kahan rah rhi ho kya hua hai kuch baat hai humne kuch kiya hai toh bata do na yeh aacha thodi lagta hai pehle toh hume bolti thi aur aaj apne yeh aachi baat hai aap hi batao jara . agr koi problem hai humse toh bata dijiye jaan rha hoon mere wjh se bhaut dikkat hui hai aapko mere wjh se bhaut problem mili hai aapko , mere wjh se ghar wale aapko galat smjhe honge jaan rha hoon sb lekin agr aapko koi problem hai toh kah dijiye mein toh kahin nahi ja rha hoon yahin hoon . kyuki pehle hi kaha tha loyal rahunga toh main yahi hoon . Kya kahu iske aage smjh nahi aa rha hai maybe i am in anxiety. smjh nahi aa rha hai kaise contact karu toh jo idea mila waise hi kiya main . kuch galti kiya hoon toh bata dena .Bhala ho us koi bhi ladka ya ladki ke fake id ka bhale hi . dhyan rakhna.Agr aise hi chhodna hai toh isse aacha Bye toh last time kah di hoti .Bhala ho us fake id ka us ladke ya ladki ka jiske wjh se aap baat ki toh bhale hi mujhe smjhi lekin kuch samay di mere liye thanks is saal ka agr mujhe laga ki aache se baat ho payi toh shyd yahi smy hui bhale hi main doshi raha lekin koi naah .chlo bye. 
+                Aur haan sorry kyuki yeh sb jo kiya un sbke liye kyuki bharosa nahi hai aapka mobile kaun kab dekhega main direct message kar skta tha lekin phir....
+            </div>
+
+            <div class="letter-bottom">
+                <span>Take care.</span>
+                <span>♡</span>
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>Made with feelings .</p>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
